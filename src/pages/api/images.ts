@@ -50,6 +50,7 @@ export default async function handler(
 
   if (req.method === 'GET') {
     const { after } = req.query;
+    console.log('After: ',after)
 
     const queryOptions = {
       size: 6,

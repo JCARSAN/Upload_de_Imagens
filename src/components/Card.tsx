@@ -23,6 +23,8 @@ interface CardProps {
 export function Card({ data, viewImage }: CardProps): JSX.Element {
   const [isLoading, setIsLoading] = useState(true);
 
+  //console.log('ViewImage: ',viewImage);
+
   return (
     <Box key={data.ts} borderRadius="md" bgColor="pGray.800">
       <Skeleton isLoaded={!isLoading}>
@@ -30,10 +32,10 @@ export function Card({ data, viewImage }: CardProps): JSX.Element {
           src={data.url}
           alt={data.title}
           objectFit="cover"
-          w="max"
+          w="100%"
           h={48}
           borderTopRadius="md"
-          onClick={() => viewImage(data.url)}
+          onClick={() => {console.log('Clicou'); viewImage(data.url)}}
           onLoad={() => setIsLoading(false)}
           cursor="pointer"
         />
@@ -47,7 +49,7 @@ export function Card({ data, viewImage }: CardProps): JSX.Element {
           </>
         ) : (
           <>
-            <Heading fontSize="2xl">{data.title}</Heading>
+            <Heading fontSize="xl">{data.title}</Heading>
             <Text mt={2.5} fontSize="md">
               {data.description}
             </Text>
