@@ -29,8 +29,7 @@ export function CardList({ cards }: CardsProps): JSX.Element {
   }
 
   return (
-     cards ? 
-     (
+     
       <SimpleGrid columns={3} columnGap={10} rowGap={10}>
         {
           cards.map((card,index) => { 
@@ -40,8 +39,7 @@ export function CardList({ cards }: CardsProps): JSX.Element {
         }
         <ModalViewImage isOpen={isOpen} onClose={onClose} imgUrl={urlImg} />
       </SimpleGrid>
-     ) :
-     <></>
+     
   );
   
 }
